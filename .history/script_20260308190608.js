@@ -129,11 +129,7 @@ function placeQueen(row,col){
  updateMoves();
  updateBoardUI();
 
- setTimeout(()=>{
-document.querySelectorAll(".attack").forEach(cell=>{
-cell.classList.remove("attack");
-});
-},2000);
+ 
 }
 
 

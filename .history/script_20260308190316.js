@@ -128,12 +128,6 @@ function placeQueen(row,col){
 
  updateMoves();
  updateBoardUI();
-
- setTimeout(()=>{
-document.querySelectorAll(".attack").forEach(cell=>{
-cell.classList.remove("attack");
-});
-},2000);
 }
 
 
@@ -156,10 +150,6 @@ function updateBoardUI(){
      }
    }
  }
-
-    document.querySelectorAll(".cell").forEach(cell=>{
-    cell.classList.remove("attack");
-    });
 
  // mark attacked cells
 
