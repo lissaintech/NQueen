@@ -2,7 +2,8 @@ body{
 
 font-family: Arial, sans-serif;
 
-background: radial-gradient(circle at top,#2d2d44,#0f0f1a);
+background:
+radial-gradient(circle at top,#2d2d44,#0f0f1a);
 
 color:white;
 
@@ -16,54 +17,32 @@ margin:0;
 
 }
 
-/* TITLE */
-
 h1{
-margin:0 0 20px 0;
+margin-top:30px;
 }
-
-
-/* GENERAL BUTTON STYLE */
 
 button{
 
 padding:12px 20px;
-
 margin:10px;
-
 border:none;
-
 border-radius:8px;
-
 background:#6c5ce7;
-
 color:white;
-
 font-size:16px;
-
-cursor:pointer;
-
-transition:all 0.2s ease;
 
 }
 
 button:hover{
+
 background:#4834d4;
+
 }
-
-button:active{
-transform:scale(0.95);
-}
-
-
-/* GAME BOARD */
 
 #board{
 
 display:grid;
-
 justify-content:center;
-
 margin-top:20px;
 
 }
@@ -72,24 +51,17 @@ margin-top:20px;
 
 width:60px;
 height:60px;
-
 display:flex;
-
 align-items:center;
 justify-content:center;
-
 font-size:34px;
-
 cursor:pointer;
-
-transition:all 0.15s ease;
 
 }
 
 .white{
 
 background:#f0d9b5;
-
 color:black;
 
 }
@@ -100,58 +72,71 @@ background:#b58863;
 
 }
 
-
-/* GAME STATS */
-
 .stats{
 
 margin:10px;
-
 font-size:18px;
 
 }
 
+#levels button{
 
-/* QUEEN ICON */
+display:block;
+margin:10px auto;
+width:200px;
+
+}
+
+.cell{
+
+transition: all 0.15s ease;
+
+}
+
+button{
+
+transition: all 0.2s ease;
+
+}
+
+button:active{
+
+transform: scale(0.95);
+
+}
 
 .queen{
-
 width:38px;
 height:38px;
-
 pointer-events:none;
-
 }
 
-
-/* ATTACK HINT GLOW */
-
-.attack{
-
-box-shadow: inset 0 0 12px rgba(255,80,80,0.9);
-
+.attack {
+box-shadow: inset 0 0 12px rgba(255, 80, 80, 0.9);
 animation: attackFade 1.2s ease forwards;
-
 }
 
-@keyframes attackFade{
-
+@keyframes attackFade {
 0%{
 box-shadow: inset 0 0 18px rgba(255,80,80,1);
 }
-
 100%{
 box-shadow: inset 0 0 6px rgba(255,80,80,0.25);
 }
+}
 
+button.reset{
+background:#d63031;
+}
+
+button.reset:hover{
+background:#b71c1c;
 }
 
 
-/* MENU CARD */
-
 .menuCard{
 
-background:rgba(30,30,50,0.85);
+background: rgba(30,30,50,0.8);
 
 padding:40px;
 
@@ -161,12 +146,9 @@ box-shadow:0 20px 40px rgba(0,0,0,0.5);
 
 width:320px;
 
-backdrop-filter:blur(10px);
+backdrop-filter: blur(10px);
 
 }
-
-
-/* GAME TITLE */
 
 .gameTitle{
 
@@ -178,8 +160,6 @@ letter-spacing:1px;
 
 }
 
-
-/* PLAY BUTTON */
 
 .playBtn{
 
@@ -210,7 +190,6 @@ box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
 
 
-/* RESET BUTTON */
 
 .resetBtn{
 
@@ -237,8 +216,6 @@ background:#b71c1c;
 }
 
 
-/* LEVEL BUTTONS */
-
 #levels button{
 
 display:block;
@@ -254,66 +231,5 @@ font-size:16px;
 border-radius:10px;
 
 background:linear-gradient(135deg,#6c5ce7,#7b6df0);
-
-}
-
-#levels button:hover{
-
-transform:translateY(-2px);
-
-box-shadow:0 6px 15px rgba(0,0,0,0.35);
-
-}
-
-
-/* LOCKED LEVELS */
-
-#levels button:disabled{
-
-background:#7a7a7a;
-
-cursor:not-allowed;
-
-opacity:0.7;
-
-transform:none;
-
-box-shadow:none;
-
-}
-
-
-.levelCard{
-
-display:flex;
-flex-direction:column;
-
-gap:4px;
-
-}
-
-.levelTitle{
-
-font-size:18px;
-font-weight:bold;
-
-}
-
-.levelSize{
-
-font-size:14px;
-opacity:0.85;
-
-}
-
-.levelMeta{
-
-font-size:14px;
-
-}
-
-.levelCard.locked{
-
-opacity:0.6;
 
 }

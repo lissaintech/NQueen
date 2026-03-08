@@ -32,38 +32,25 @@ function showLevels(){
 
  for(let i=1;i<=maxLevel;i++){
 
-  let btn=document.createElement("button");
+   let btn=document.createElement("button");
 
-  let bestTime = localStorage.getItem("bestTime_"+i);
+   let bestTime = localStorage.getItem("bestTime_"+i);
 
-  let size = (i+3)+"x"+(i+3);
+   btn.innerText =
+     "Level "+i+
+     " ("+(i+3)+"x"+(i+3)+")"+
+     (bestTime ? " ⭐ "+bestTime : "");
 
-  let star = bestTime ? "⭐" : "";
+   if(i>unlockedLevel){
 
-  btn.innerHTML = `
-  <div class="levelCard">
-  <div class="levelTitle">Level ${i}</div>
-  <div class="levelSize">${size}</div>
-  <div class="levelMeta">${star} ${bestTime ? bestTime : ""}</div>
-  </div>
-  `;
-  if(i>unlockedLevel){
+     btn.disabled=true;
+     btn.style.background="gray";
 
- btn.disabled=true;
+   }else{
 
- btn.innerHTML = `
- <div class="levelCard locked">
- <div class="levelTitle">Level ${i}</div>
- <div class="levelSize">${size}</div>
- <div class="levelMeta">🔒 Locked</div>
- </div>
- `;
+     btn.onclick=()=>startLevel(i);
 
-}else{
-
- btn.onclick=()=>startLevel(i);
-
-}
+   }
 
    levelDiv.appendChild(btn);
  }
@@ -420,11 +407,8 @@ function resetProgress(){
 
  if(confirm("Reset all progress?")){
 
-   for(let i=1;i<=maxLevel;i++){
-     localStorage.removeItem("bestTime_"+i);
-   }
+   localStorage.clear();
 
-   localStorage.setItem("unlockedLevel",1);
    unlockedLevel = 1;
 
    showLevels();

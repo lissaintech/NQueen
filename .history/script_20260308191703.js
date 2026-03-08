@@ -47,23 +47,16 @@ function showLevels(){
   <div class="levelMeta">${star} ${bestTime ? bestTime : ""}</div>
   </div>
   `;
-  if(i>unlockedLevel){
+   if(i>unlockedLevel){
 
- btn.disabled=true;
+     btn.disabled=true;
+     btn.style.background="gray";
 
- btn.innerHTML = `
- <div class="levelCard locked">
- <div class="levelTitle">Level ${i}</div>
- <div class="levelSize">${size}</div>
- <div class="levelMeta">🔒 Locked</div>
- </div>
- `;
+   }else{
 
-}else{
+     btn.onclick=()=>startLevel(i);
 
- btn.onclick=()=>startLevel(i);
-
-}
+   }
 
    levelDiv.appendChild(btn);
  }

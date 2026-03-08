@@ -34,36 +34,29 @@ function showLevels(){
 
   let btn=document.createElement("button");
 
-  let bestTime = localStorage.getItem("bestTime_"+i);
+    let bestTime = localStorage.getItem("bestTime_"+i);
 
-  let size = (i+3)+"x"+(i+3);
+    let size = (i+3)+"x"+(i+3);
 
-  let star = bestTime ? "⭐" : "";
+    let star = bestTime ? "⭐" : "";
 
-  btn.innerHTML = `
-  <div class="levelCard">
-  <div class="levelTitle">Level ${i}</div>
-  <div class="levelSize">${size}</div>
-  <div class="levelMeta">${star} ${bestTime ? bestTime : ""}</div>
-  </div>
-  `;
-  if(i>unlockedLevel){
+    btn.innerHTML = `
+    <div class="levelCard">
+    <div class="levelTitle">Level ${i}</div>
+    <div class="levelSize">${size}</div>
+    <div class="levelMeta">${star} ${bestTime ? bestTime : ""}</div>
+    </div>
+    `;
+   if(i>unlockedLevel){
 
- btn.disabled=true;
+     btn.disabled=true;
+     btn.style.background="gray";
 
- btn.innerHTML = `
- <div class="levelCard locked">
- <div class="levelTitle">Level ${i}</div>
- <div class="levelSize">${size}</div>
- <div class="levelMeta">🔒 Locked</div>
- </div>
- `;
+   }else{
 
-}else{
+     btn.onclick=()=>startLevel(i);
 
- btn.onclick=()=>startLevel(i);
-
-}
+   }
 
    levelDiv.appendChild(btn);
  }
