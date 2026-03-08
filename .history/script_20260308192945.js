@@ -353,6 +353,8 @@ function isValid(){
 function solveAI(){
 
  let sol=new Array(n).fill(-1);
+  seconds += 60;
+  updateTimerDisplay();
 
  if(backtrack(sol,0)){
 
@@ -503,32 +505,37 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 // HINT
 function showHint(){
 
-    let solution = new Array(n).fill(-1);
+if(hintsUsed >= maxHints){
+ alert("No hints left for this level.");
+ return;
+}
 
-    if(backtrack(solution,0)){
+let solution = new Array(n).fill(-1);
 
-    for(let i=0;i<n;i++){
+if(backtrack(solution,0)){
 
-    if(board[i]===-1){
+for(let i=0;i<n;i++){
 
-    board[i]=solution[i];
+if(board[i]===-1){
 
-    updateBoardUI();
+board[i]=solution[i];
 
-    let cell=document.getElementById(i+"-"+solution[i]);
+updateBoardUI();
 
-    cell.classList.add("hintGlow");
+let cell=document.getElementById(i+"-"+solution[i]);
+cell.classList.add("hintGlow");
 
-    setTimeout(()=>{
-    cell.classList.remove("hintGlow");
-    },800);
+setTimeout(()=>{
+cell.classList.remove("hintGlow");
+},800);
 
-    break;
+hintsUsed++;
+break;
 
-    }
+}
 
-    }
+}
 
-    }
+}
 
 }

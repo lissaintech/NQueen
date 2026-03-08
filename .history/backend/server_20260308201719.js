@@ -1,15 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
-const path = require("path");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-
-app.use(express.static(path.join(__dirname, "public")));
-
 
 const file = "scores.json";
 
@@ -41,7 +36,6 @@ fs.writeFileSync(file, JSON.stringify(top10,null,2));
 res.json({message:"Score saved"});
 
 });
-
 
 const PORT = process.env.PORT || 3000;
 

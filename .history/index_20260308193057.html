@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>N Queen AI Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<canvas id="confetti"></canvas>
+
+<body>
+
+    <div id="homeScreen">
+
+<div class="menuCard">
+
+<h1 class="gameTitle">♛ N Queen AI Challenge</h1>
+
+<button class="playBtn" onclick="startLevel(unlockedLevel)">Play</button>
+
+<button class="resetBtn" onclick="resetProgress()">Reset Progress</button>
+
+<div id="levels"></div>
+
+</div>
+
+</div>
+
+
+    <div id="gameScreen" style="display:none;">
+
+        <h2>Level <span id="levelDisplay"></span></h2>
+
+        <div class="stats">
+
+            Time: <span id="timer">00:00</span>
+
+            Hints: <span id="hintCount">2</span>
+
+            Moves: <span id="moves">0</span>
+
+        </div>
+
+        <div id="board"></div>
+
+       <button onclick="checkSolution()">Check</button>
+       <button onclick="showHint()">Hint</button> 
+       <button onclick="solveAI()">AI Solve</button>
+        <button onclick="restartLevel()">Restart</button>
+        <button onclick="goHome()">Home</button>
+
+    </div>
+
+
+    <div id="winScreen" style="display:none;">
+
+        <h2>Level Complete</h2>
+
+        <p>Time: <span id="finalTime"></span></p>
+
+        <button onclick="nextLevel()">Next Level</button>
+
+        <button onclick="goHome()">Home</button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
