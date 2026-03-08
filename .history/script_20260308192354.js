@@ -499,36 +499,3 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 },2000);
 
 }
-
-// HINT
-function showHint(){
-
-    let solution = new Array(n).fill(-1);
-
-    if(backtrack(solution,0)){
-
-    for(let i=0;i<n;i++){
-
-    if(board[i]===-1){
-
-    board[i]=solution[i];
-
-    updateBoardUI();
-
-    let cell=document.getElementById(i+"-"+solution[i]);
-
-    cell.classList.add("hintGlow");
-
-    setTimeout(()=>{
-    cell.classList.remove("hintGlow");
-    },800);
-
-    break;
-
-    }
-
-    }
-
-    }
-
-}

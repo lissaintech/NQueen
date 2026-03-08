@@ -503,32 +503,32 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 // HINT
 function showHint(){
 
-    let solution = new Array(n).fill(-1);
+let solution = new Array(n).fill(-1);
 
-    if(backtrack(solution,0)){
+if(backtrack(solution,0)){
 
-    for(let i=0;i<n;i++){
+for(let i=0;i<n;i++){
 
-    if(board[i]===-1){
+if(board[i]===-1){
 
-    board[i]=solution[i];
+board[i]=solution[i];
 
-    updateBoardUI();
+updateBoardUI();
 
-    let cell=document.getElementById(i+"-"+solution[i]);
+let cell=document.getElementById(i+"-"+solution[i]);
 
-    cell.classList.add("hintGlow");
+cell.classList.add("hintGlow");
 
-    setTimeout(()=>{
-    cell.classList.remove("hintGlow");
-    },800);
+setTimeout(()=>{
+cell.classList.remove("hintGlow");
+},800);
 
-    break;
+break;
 
-    }
+}
 
-    }
+}
 
-    }
+}
 
 }

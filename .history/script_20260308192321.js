@@ -263,7 +263,6 @@ function checkSolution(){
  if(isValid()){
 
    winSound.play();
-  launchConfetti();
 
    clearInterval(timerInterval);
 
@@ -443,92 +442,4 @@ function resetProgress(){
 }
 
 
-//CONFETTI
-
-function launchConfetti(){
-
-let canvas=document.getElementById("confetti");
-let ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let pieces=[];
-
-for(let i=0;i<150;i++){
-
-pieces.push({
-
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height-200,
-
-size:5+Math.random()*5,
-
-speed:2+Math.random()*3,
-
-angle:Math.random()*360
-
-});
-
-}
-
-function draw(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-pieces.forEach(p=>{
-
-ctx.fillStyle=`hsl(${Math.random()*360},80%,60%)`;
-
-ctx.fillRect(p.x,p.y,p.size,p.size);
-
-p.y+=p.speed;
-
-});
-
-requestAnimationFrame(draw);
-
-}
-
-draw();
-
-setTimeout(()=>{
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-},2000);
-
-}
-
-// HINT
-function showHint(){
-
-    let solution = new Array(n).fill(-1);
-
-    if(backtrack(solution,0)){
-
-    for(let i=0;i<n;i++){
-
-    if(board[i]===-1){
-
-    board[i]=solution[i];
-
-    updateBoardUI();
-
-    let cell=document.getElementById(i+"-"+solution[i]);
-
-    cell.classList.add("hintGlow");
-
-    setTimeout(()=>{
-    cell.classList.remove("hintGlow");
-    },800);
-
-    break;
-
-    }
-
-    }
-
-    }
-
-}
+//
