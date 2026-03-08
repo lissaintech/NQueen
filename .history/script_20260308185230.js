@@ -360,8 +360,4 @@ function goHome(){
 showLevels();
 
 
-//RESTART
-
-function restartLevel(){
- startLevel(currentLevel);
-}
+/

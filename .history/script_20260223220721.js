@@ -358,10 +358,3 @@ function goHome(){
 // INIT
 
 showLevels();
-
-
-//RESTART
-
-function restartLevel(){
- startLevel(currentLevel);
-}
