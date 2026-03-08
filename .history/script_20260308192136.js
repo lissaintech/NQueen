@@ -165,18 +165,18 @@ function updateBoardUI(){
 
      if(board[row]==col){
 
-      cell.innerText="♛";
+  cell.innerText="♛";
 
-      cell.classList.add("queenDrop");
+  cell.classList.add("queenDrop");
 
-      setTimeout(()=>{
-        cell.classList.remove("queenDrop");
-      },250);
+  setTimeout(()=>{
+    cell.classList.remove("queenDrop");
+  },250);
 
-      }else{
+}else{
 
-      cell.innerText="";
-    }
+  cell.innerText="";
+}
    }
  }
 

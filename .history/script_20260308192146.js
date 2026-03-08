@@ -173,7 +173,7 @@ function updateBoardUI(){
         cell.classList.remove("queenDrop");
       },250);
 
-      }else{
+    }else{
 
       cell.innerText="";
     }
