@@ -72,17 +72,18 @@ Steps:
 ```
 NQueen
 │
-├── index.html
-├── style.css
-├── script.js
-│
 ├── backend
 │   ├── server.js
+│   ├── package.json
 │   ├── scores.json
-│   └── package.json
+│   │
+│   └── public
+│       ├── index.html
+│       ├── style.css
+│       ├── script.js
+│       ├── place.mp3
+│       └── win.mp3
 │
-├── place.mp3
-├── win.mp3
 └── README.md
 ```
 
