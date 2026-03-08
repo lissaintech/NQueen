@@ -10,10 +10,6 @@ app.use(express.json());
 
 // SERVE FRONTEND
 app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
 const file = "scores.json";
 
 app.get("/leaderboard", (req,res)=>{
