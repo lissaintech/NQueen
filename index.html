@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>N Queen AI Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="homeScreen">
+
+        <h1>N Queen AI Challenge</h1>
+
+        <button onclick="showLevels()">Play</button>
+
+        <div id="levels"></div>
+
+    </div>
+
+
+    <div id="gameScreen" style="display:none;">
+
+        <h2>Level <span id="levelDisplay"></span></h2>
+
+        <div class="stats">
+
+            Time: <span id="timer">00:00</span>
+
+            Moves: <span id="moves">0</span>
+
+        </div>
+
+        <div id="board"></div>
+
+        <button onclick="checkSolution()">Check</button>
+
+        <button onclick="solveAI()">AI Solve</button>
+
+        <button onclick="goHome()">Home</button>
+
+    </div>
+
+
+    <div id="winScreen" style="display:none;">
+
+        <h2>Level Complete</h2>
+
+        <p>Time: <span id="finalTime"></span></p>
+
+        <button onclick="nextLevel()">Next Level</button>
+
+        <button onclick="goHome()">Home</button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
